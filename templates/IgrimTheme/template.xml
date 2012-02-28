@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='windows-1251'?>
+<template cmsversion="1.2.b" thumb="thumb.jpg">
+	<name>Igrim</name>
+	<creationDate>14.06.2007</creationDate>
+	<author>Галицкий Александр</author>
+	<copyright>Это стандартный шаблон.</copyright>
+	<authorEmail>galitsky@pochta.ru</authorEmail>
+	<authorUrl></authorUrl>
+	<version>1.1</version>
+	<description>Легкая, приятная для глаз, почти без графики тема.</description>
+	<css>
+		<cssfile>style.css</cssfile>
+		<cssfile mod="news">news.css</cssfile>
+		<cssfile mod="guestbook">news.css</cssfile>
+		<cssfile mod="downloads">news.css</cssfile>
+	</css>
+	<!--
+	<java>
+		<javafile [mod="news"]></javafile>
+	</java>
+	-->
+</template>

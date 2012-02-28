@@ -1,0 +1,38 @@
+.configtable {
+	width: 80%;
+	border: 1px #CCCCCC solid;
+	background-color: #FFFFFF;
+}
+
+.configtable th {
+	color: #000080;
+	background-color: #E1E1E1;
+	border: none;
+	border-bottom: 1px #CCCCCC solid;
+	text-shadow: 1px 1px 1px #EEEEFF;
+}
+
+.configsubmit {
+	border: 1px #CCCCCC solid;
+	text-align: center;
+	width: 50%;
+	background-color: #F2F3F5;
+	height: 30px;
+}
+
+.leftc{
+	background-color: #F2F3F5;
+	width: 55%;
+	vertical-align: top;
+	text-align: left;
+	border: none;
+	padding: 2px;
+}
+
+.rightc{
+	background-color: #F9F9F9;
+	border: none;
+	vertical-align: top;
+	text-align: left;
+	padding: 1px;
+}

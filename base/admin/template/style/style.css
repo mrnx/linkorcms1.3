@@ -1,0 +1,325 @@
+/*исп только в теме*/
+body{
+	margin: 10px;
+	padding: 0px;
+	background-color: #F7F7F7;
+	font-family: Verdana, Tahoma, Arial;
+	font-size: 8pt;
+	background-image: url(../img/bg.gif);
+}
+
+table, img, form, td, th{
+	border: none;
+	margin: 0;
+	padding: 0;
+}
+
+a:link{color: #334433;text-decoration: none;}
+a:visited{color: #334433;text-decoration: none;}
+a:active{color: #334433;text-decoration: none;}
+a:hover{color: #0000FF;text-decoration: none;}
+
+textarea{
+	font-size: 10pt;
+	padding: 2px;
+	font-family: "Courier New", Monospace, Verdana, Tahoma, Arial;
+	border: 1px solid #AAAAFF;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	background-color: #FFFFFF;
+}
+
+input{
+	font-size: 10pt;
+	padding: 2px;
+	background-color: #FFFFFF;
+}
+input[type=submit], input[type=button], button{
+	cursor: pointer;
+	background-color: #EFEFEF;
+	border: 1px solid #AAAAFF;
+	padding-left: 4px;
+	padding-right: 4px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+input[type=submit]:hover, input[type=button]:hover, button:hover{
+	background-color: #F8F8F8;
+	border: 1px solid #AAAABB;
+}
+input[type=text], input[type=password]{
+	border: 1px solid #AAAAFF;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.maintable{ /* Главная таблица */
+	width: 100%;
+}
+
+.mainctd{ /* Поле в главной таблице с настройками */
+	width: 100%;
+	padding: 5px 0 5px 0;
+}
+
+.mainltd{ /* Поле в главной таблице с блоками */
+	vertical-align: top;
+	padding: 3px 4px 3px 0;
+	width: 160px;
+}
+
+.infotd{/* Нижнее поле в главной таблице с временем генерации таблицы */
+	border: 1px #CCCCEE solid;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	background-color: #F2F2F2;
+	color: #000000;
+	text-align: center;
+	vertical-align: middle;
+	padding: 5px;
+}
+
+.title3 { /* Верхняя область страницы */
+	border: 1px #CCCCEE solid;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	background-color: #F2F2F2;
+	width: 100%;
+	padding: 4px;
+}
+
+.title { /* Центральный блок с настройками */
+	border: 1px #C4C4C4 solid;
+	border-left: 1px #CCCCEE solid;
+	border-top: 1px #CCCCEE solid;
+	background-color: #E8EFF4; /*#E6E6E8*/
+	width: 100%;
+}
+
+.tcenter { /* Заголовок центрального блока */
+	height: 24px;
+	border-bottom: 1px #BBBBBB solid;
+	color: #2200AA;
+	text-shadow: 1px 1px 1px #EEEEFF;
+}
+
+.title2 { /* Блок меню */
+	border: 1px #CCCCEE solid;
+	background-color: #F2F2F2;
+	width: 160px;
+}
+
+.title2 th { /* Блок меню */
+	color: #3377FF;
+	text-shadow: 1px 1px 1px #FFFFFF;
+}
+
+.menu { /* Таблица с элементами меню */
+	width: 100%;
+}
+
+.active {
+	cursor: default;
+	color: #3377FF;
+	border: 1px #CCCCCC solid;
+	background-color: #E3E3E3;
+	background-image: url("../img/new.gif");
+	background-repeat: repeat-x;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	text-shadow: 1px 1px 0px #FFFFFF;
+	padding: 3px;
+}
+
+.admenuitemover { /* активные ссылки админского меню */
+	cursor: pointer;
+	color: #000;
+	background-color: #FFF;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	text-shadow: 1px 1px 1px #EEEEFF;
+	padding: 3px;
+}
+
+.admn { /* не активные ссылки админского меню */
+	color: #676767;
+	cursor: pointer;
+	background-color: #F2F2F2;
+	padding: 3px;
+}
+
+.modmenuitemover { /* не активные ссылки меню модуля*/
+	cursor: pointer;
+	background-color: #FFFFFF;
+	text-shadow: 1px 1px 1px #EEEEFF;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	padding: 3px;
+}
+
+.modn { /* активные ссылки меню модуля*/
+	color: #676767;
+	cursor: pointer;
+	background-color: #E8EFF4;
+	text-shadow: 1px 1px 1px #FFF;
+	border-radius: 3px;
+	padding: 3px;
+}
+
+.contenttd { /* Место в таблицах где расположен контент вне загоовков */
+	padding: 5px;
+}
+
+.nav_cont {
+	border: 1px #C0C0C0 solid;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	padding: 1px;
+}
+
+.nav_menu {
+	border: none;
+}
+
+.nav_item {
+	border: none;
+	padding-left: 4px;
+	padding-right: 4px;
+}
+
+.nav_active {
+	border: 1px #C0C0C0 solid;
+	background-color: #F5F5F5;
+	padding: 3px;
+	padding-left: 6px;
+	padding-right: 6px;
+
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.lnav td {
+
+}
+
+.rnav td {
+
+}
+
+/* Классы стандартные которые могут использоваться в модулях админ панели */
+.commtable { /* Таблица комментария */
+	border: 1px #BCD6E9 solid;
+	border-bottom: none;
+	border-right: none;
+	margin: 10px 0px 10px 0px;
+}
+
+.commth { /* Ячейки заголовков таблицы комментария */
+	color: #000080;
+	background-color: #E1E1E1;
+	border-bottom: 1px #ABC5D8 solid;
+	border-right: 1px #ABC5D8 solid;
+	height: 16px;
+	padding-left: 3px;
+	padding-right: 3px;
+}
+
+.commtd { /* Ячейки для обычных ячеек таблицы комментария*/
+	padding: 1px;
+	border: 1px #ABC5D8 solid;
+	border-top: none;
+	border-left: none;
+	background-color: #F5F5F5;
+	text-align: center;
+}
+
+.commtext { /* Ячейка с текстом комментария*/
+	padding: 2px;
+	padding-left: 5px;
+	border: 1px #ABC5D8 solid;
+	border-top: none;
+	border-left: none;
+	background-color: #F5F5F5;
+}
+
+.cfgtable { /* Класс таблиц админ панели */
+	width: 95%;
+	margin: 0px;
+	margin-bottom: 5px;
+	border-left: 1px #CCCCCC solid;
+	border-top: 1px #CCCCCC solid;
+}
+
+.cfgtable th{ /* Ячейки заголовков таблиц */
+	color: #333383;
+	background-color: #E7E7E7;
+	border: none;
+	border-top: 1px #CCCCCC solid;
+	border-bottom: 1px #CCCCCC solid;
+	border-right: 1px #CCCCCC solid;
+	height: 25px;
+	text-shadow: 1px 1px 1px #EEEEFF;
+}
+
+.cfgtable td{ /* Ячейки для обычных таблиц*/
+	padding: 2px;
+	border: none;
+	border-bottom: 1px #CCCCCC solid;
+	border-right: 1px #CCCCCC solid;
+	background-color: #FCFCFC;
+	text-align: center;
+}
+
+.formtable{ /* Таблица для формы */
+	background-color: #F5F5F5;
+	margin: 0px;
+	border-top: 1px #ABC5D8 solid;
+	border-left: 1px #ABC5D8 solid;
+	border-right: 1px #ABC5D8 solid;
+}
+
+.formtabletd{ /* Ячейки для элементов форм */
+	border-bottom: 1px #ABC5D8 solid;
+	padding: 4px;
+	padding-bottom: 2px;
+	padding-right: 3px;
+}
+
+.fsubmit{
+	border-bottom: 1px #ABC5D8 solid;
+	padding-top: 4px;
+	padding-bottom: 2px;
+	padding-right: 3px;
+	height: 13px;
+}
+
+a.button{
+	width: 20px;
+	height: 18px;
+	background: url("../img/button.png");
+	background-repeat: no-repeat;
+	background-position: left top;
+	display: inline-block;
+	padding-left: 0;
+	padding-top: 2px;
+	margin-right: 1px;
+}
+a.button:hover{
+	background-position: right top;
+}
+a.button img{
+	vertical-align: bottom;
+	padding: 0;
+	margin: 0;
+	border: none;
+}

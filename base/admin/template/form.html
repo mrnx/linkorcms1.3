@@ -1,0 +1,13 @@
+{content.form_open}
+<table cellspacing="0" cellpadding="0" class="formtable">
+	{rows}
+	<tr>
+		<td align="left" style="padding-left: 14px; padding-right: 14px;"{row:width} {row.width}{/row:width} class="formtabletd">{row.caption}</td>
+		<td align="left" class="formtabletd">{row.control}</td>
+	</tr>
+	{/rows}
+	<tr>
+		<td colspan="2" align="center" background="{template.dir}img/FSubmitTd.gif" class="fsubmit">{content.form_submit}</td>
+	</tr>
+</table>
+</form>

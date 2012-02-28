@@ -1,0 +1,47 @@
+{template}
+<body>
+<table class="maintable">
+	<tr>
+		<td width="100%" colspan="2">
+			<table class="title3">
+				<tr>
+					<td align="left" width="40"><img src="{page.admin_avatar_small}" width="32" height="32" /></td>
+					<td align="left" valign="top">Здравствуйте {page.admin_name}.</td>
+					<td align="center" valign="middle" width="33%">{page.site}</td>
+					<td align="right" width="33%">
+						<a href="{page.admin_file}?exe=config"><img src="images/admin/config2.gif" title="Основные настройки" /></a>
+						<a href="#0" onclick="MailToMenu();"><img src="images/admin/mail_big.gif" title="Отправить письмо с сайта" /></a>
+						<img src="images/admin/sep.gif" />
+						<a href="<?=Ufu('index.php')?>"><img src="images/admin/home.gif" title="Перейти на сайт" /></a>
+						<a href="{page.admin_file}?exe=exit"><img src="images/admin/exit.gif" title="Выход" /></a>
+					</td>
+				</tr>
+			</table>
+			<table height="4"><tr><td></td></tr></table>
+		</td>
+	</tr>
+	<tr>
+		<td valign="top" width="160">
+			<table border="0" class="mainltd">
+				<tr>
+					<td>{admin_menu}{/admin_menu}</td>
+				</tr>
+			</table>
+		</td>
+		<td valign="top" width="100%">
+			<table cellspacing="0" cellpadding="0" border="0" class="mainctd">
+				{tool_menu}{/tool_menu}
+				{content_box}{/content_box}
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" class="infotd">
+			<a href="http://linkorcms.ru" target="_blank">Система управления контентом {page.cms_name} v{page.cms_version}</a><br />
+			<b><a href="http://linkorcms.ru" target="_blank">Все права защищены. © 2006-2010, LinkorCMS Development Group</a></b><br />
+			{page.info}
+		</td>
+	</tr>
+</table>
+</body>
+{/template}

@@ -1,0 +1,58 @@
+Options -Indexes
+AddDefaultCharset windows-1251
+
+RewriteEngine On
+
+RewriteRule ^/?index\.html$ index.php
+
+# Modul "FORUM": topics
+RewriteRule ^forum/([0-9]*)/([0-9]*)/topic([0-9]*)-new.html$ index.php?name=forum&op=showtopic&topic=$3&view=lastpost
+RewriteRule ^forum/([0-9]*)/([0-9]*)/topic([0-9]*)-([0-9]*).html$ index.php?name=forum&op=showtopic&topic=$3&page=$4
+RewriteRule ^forum/([0-9]*)/([0-9]*)/topic([0-9]*).html$ index.php?name=forum&op=showtopic&topic=$3
+RewriteRule ^forum/([0-9]*)/topic([0-9]*)-([0-9]*).html$ index.php?name=forum&op=showtopic&topic=$2&page=$3
+RewriteRule ^forum/topic([0-9]*)-new.html$ index.php?name=forum&op=showtopic&topic=$1&view=lastpost
+RewriteRule ^forum/topic([0-9]*)-([0-9]*).html$ index.php?name=forum&op=showtopic&topic=$1&page=$2
+RewriteRule ^forum/addtopic/([0-9]*)/$ index.php?name=forum&op=addtopic&forum=$1
+RewriteRule ^forum/addtopic/([0-9]*)$ index.php?name=forum&op=addtopic&forum=$1
+RewriteRule ^forum/topic([0-9]*).html$ index.php?name=forum&op=showtopic&topic=$1
+
+RewriteRule ^forum/lasttopics/([0-9]*)/([0-9]*)-([0-9]*)$ index.php?name=forum&op=lasttopics&forum=$1&day=$2&page=$3
+RewriteRule ^forum/lasttopics-([0-9]*)-([0-9]*)$ index.php?name=forum&op=lasttopics&day=$1&page=$2
+RewriteRule ^forum/lasttopics([0-9]*)-([0-9]*)$ index.php?name=forum&op=lasttopics&day=$1&page=$2
+RewriteRule ^forum/lasttopics/([0-9]*)/([0-9]*)$ index.php?name=forum&op=lasttopics&forum=$1&day=$2
+RewriteRule ^forum/lasttopics([0-9]*)$ index.php?name=forum&op=lasttopics&day=$1
+RewriteRule ^forum/lasttopics/([0-9]*)$ index.php?name=forum&op=lasttopics&forum=$1
+RewriteRule ^forum/lasttopics$ index.php?name=forum&op=lasttopics
+
+# Modul "FORUM": save_edit post
+RewriteRule ^forum/addpost/([0-9]*)/topic([0-9]*)$ index.php?name=forum&op=addpost&topic=$2&forum=$1
+RewriteRule ^forum/savepost/topic([0-9]*)/post([0-9]*)-([0-9]*)$ index.php?name=forum&op=savepost&topic=$1&post=$2&page=$3
+# Modul "FORUM": forum
+RewriteRule ^forum/([0-9]*)/([0-9]*)-([0-9]*)/$ index.php?name=forum&op=showforum&forum=$2&page=$3
+RewriteRule ^forum/([0-9]*)/([0-9]*)-([0-9]*)$ index.php?name=forum&op=showforum&forum=$2&page=$3
+RewriteRule ^forum/([0-9]*)/([0-9]*)/$ index.php?name=forum&op=showforum&forum=$2
+RewriteRule ^forum/([0-9]*)/([0-9]*)$ index.php?name=forum&op=showforum&forum=$2
+RewriteRule ^forum/([0-9]*)-([0-9]*)$ index.php?name=forum&op=showforum&forum=$1&page=$2
+RewriteRule ^forum/([0-9]*)$/ index.php?name=forum&op=showforum&forum=$1
+RewriteRule ^forum/([0-9]*)$ index.php?name=forum&op=showforum&forum=$1
+RewriteRule ^forum/([0-9]*)$ index.php?name=forum&cat=$1
+RewriteRule ^forum$ index.php?name=forum
+# Modul "FORUM": markread - viewnoread
+RewriteRule ^forum/viewnoread-([0-9]*)$ index.php?name=forum&op=viewnoread&page=$1
+RewriteRule ^forum/viewnoread/([0-9]*)$ index.php?name=forum&op=viewnoread&forum=$1
+RewriteRule ^forum/viewnoread$ index.php?name=forum&op=viewnoread
+RewriteRule ^forum/markread/([0-9]*)$ index.php?name=forum&op=markread&forum=$1
+RewriteRule ^forum/markread$ index.php?name=forum&op=markread
+# Modul "FORUM": usertopics
+RewriteRule ^forum/usertopics([0-9]*)/([0-9]*)-([0-9]*)$ index.php?name=forum&op=usertopics&forum=$1&user=$2&page=$3
+RewriteRule ^forum/usertopics([0-9]*)/([0-9]*)$ index.php?name=forum&op=usertopics&forum=$1&user=$2
+# Modul "FORUM": post
+RewriteRule ^forum/t([0-9]*)/post([0-9]*).html$ index.php?name=forum&op=post&topic=$1&post=$2
+
+# Modul "USER":
+RewriteRule ^user/([0-9]*)$ index.php?name=user&op=userinfo&user=$1
+
+# Общее правило
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} !^/?(forum|images|base|blocks|blog|blogs|modules|plugins|scripts|setup|templates|uploads|/.*\.php).*
+RewriteRule ^(.*)$ index.php?ufu=$1 [L]

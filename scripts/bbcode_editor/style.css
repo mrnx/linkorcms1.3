@@ -1,0 +1,85 @@
+.bbcode_toolbar{
+	padding-top: 2px;
+	padding-bottom: 4px;
+	 height: 23px;
+}
+
+.bbcode_button{
+	width: 18px;
+	height: 18px;
+	float: left;
+	cursor: pointer;
+	margin: 0;
+	background: url("images/button.png");
+	background-repeat: no-repeat;
+	background-position: left top;
+	padding-left: 2px;
+	padding-top: 2px;
+	margin-left: 1px;
+	margin-top: 2px;
+}
+.bbcode_button:hover{
+	background-position: right top;
+}
+.bbcode_button img{
+	vertical-align: bottom;
+	padding: 0;
+	border: none;
+}
+
+.bbcode_colorbar{
+	height: 11px;
+	padding-bottom: 2px;
+}
+
+.bbcode_color{
+	width: 13px;
+	height: 13px;
+	margin: 1px;
+	cursor: pointer;
+	float: left;
+}
+
+.bbcode_color:hover{
+	width: 13px;
+	height: 13px;
+	border: 1px solid #537BAE;
+	margin: 0;
+}
+
+.bbcode_select{
+	border: 1px #CEC8B9 solid;
+	border-radius: 3px;
+	vertical-align: top;
+	margin: 0;
+	margin-left: 2px;
+	padding: 2px;
+}
+
+.bbcode_quote{
+	margin: 0;
+	width: 95%;
+	border: 1px #CEC8B9 solid;
+	background-color: #F8F8F8;
+	padding:5px;
+}
+
+.bbcode_php{
+	margin: 0;
+	width: 95%;
+	border: 1px #CEC8B9 solid;
+	background-color: #F8F8F8;
+	padding:5px;
+}
+
+.bbcode_code{
+	margin: 0;
+	width: 95%;
+	border: 1px #CEC8B9 solid;
+	background-color: #F8F8F8;
+	padding:5px;
+}
+
+.bbcode_hide{ margin: 3px 0 3px 0; }
+.bbcode_hide a{ border: 1px #cccccc solid; background-color: #EEEEEE; display: inline-block; width: 98%; padding: 3px; outline: 0;}
+.bbcode_hide div{ border:  1px #cccccc solid; border-top: none; padding: 3px; width: 98%;}

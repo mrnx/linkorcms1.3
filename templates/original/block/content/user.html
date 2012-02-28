@@ -1,0 +1,27 @@
+<br />
+<center>
+	{block.lhello}
+	{block.user_name}
+	<br />
+	<br />
+	<img src="{block.user_avatar_url}" />
+	<br />
+	<br />
+	{block:isadmin}<a href="{block.adminfile_url}">{block.ladminpanel}</a>
+	<br />
+	<br />
+	{/block:isadmin}
+	<a href="{block.user_info_url}">{block.luser_info}</a>
+	<br />
+	<a href="{block.edit_user_data_url}">{block.ledit_user_data}</a>
+	<br />
+	<br />
+	  <!--   оповещения о не прочтённых сообщениях  -->
+{private_message} {/private_message}   
+	<br />
+	<a href="{block.user_private_url}">{block.user_private}</a><br />
+	<a href="{block.user_contact_url}">{block.user_contact}</a><br />
+	<br />
+	<a href="{block.exit_url}">{block.lexit}</a>
+	<br />
+</center>

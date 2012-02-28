@@ -1,0 +1,20 @@
+.treetable {
+	width: 95%;
+	margin: 0px;
+	margin-bottom: 5px;
+	border: 1px #CCCCCC solid;
+	background-color: #F5F5F5;
+}
+
+.treetd { /* ячейки дл€ обычных таблиц*/
+	font-size: 11px;
+	padding: 2px;
+	border: none;
+}
+
+.treelevel {
+	border: none;
+	font-size: 11px;
+	width: 24px;
+	text-align: center;
+}
