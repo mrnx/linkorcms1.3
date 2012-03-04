@@ -1,5 +1,9 @@
 <?php
 
+/*
+ * Правка файла: Мартин | $Date$
+ */
+
 if(!defined('VALID_RUN')){
 	header("HTTP/1.1 404 Not Found");
 	exit;
@@ -40,7 +44,6 @@ function AdminGalleryMainFunc()
 		$cat = -1;
 		$where = "";
 	}
-	$data = array();
 	$data = $tree->GetCatsData($cat, true);
 	$site->DataAdd($data, -1, 'Все изображения', $cat == -1);
 	if(isset($_GET['page'])){
@@ -49,7 +52,6 @@ function AdminGalleryMainFunc()
 		$page = 1;
 	}
 	AddCenterBox('Фото');
-	$text = '';
 	$text = '<form name="categories" method="get">'.'<table cellspacing="0" cellpadding="0" border="0" width="100%" align="center"><tr><td align="center" class="contenttd">'.'Выберите категорию: '.$site->Hidden('exe', 'gallery').$site->Select('cat', $data).$site->Submit('Показать').'</td></tr></table></form><br />';
 	AddText($text);
 	$r = $db->Select('gallery', $where);
@@ -113,7 +115,7 @@ function AdminGalleryMainFunc()
 
 function AdminGalleryEditor()
 {
-	global $tree, $site, $config, $db, $user, $editimages;
+	global $tree, $site, $config, $db, $editimages;
 	if(!$editimages){
 		AddTextBox('Ошибка', $config['general']['admin_accd']);
 		return;
@@ -155,7 +157,6 @@ function AdminGalleryEditor()
 		unset($par);
 	}
 	$visdata = GetUserTypesFormData($view);
-	$cats_data = array();
 	$cats_data = $tree->GetCatsData($cat_id);
 	if(count($cats_data) == 0){
 		AddTextBox($top, 'Нет категорий для добавления! Создайте категорию.');
@@ -211,7 +212,7 @@ function AdminGallerySaveImage()
 			$tree->CalcFileCounter($cat_id, true);
 		}
 	}else{
-		$set = "cat_id='$cat_id',title='$title',description='$desc',file='$file',author='$author',email='$email',site='',allow_comments='$allow_comments',allow_votes='$allow_votes',view='$view',show='$show'";
+		$set = "`cat_id`='$cat_id',`title`='$title',`description`='$desc',`file`='$file',`author`='$author',`email`='$email',`site`='',`allow_comments`='$allow_comments',`allow_votes`='$allow_votes',`view`='$view',`show`='$show'";
 		$id = SafeEnv($_GET['id'], 11, int);
 		$r = $db->Select('gallery', "`id`='$id'");
 		if($r[0]['cat_id'] != $cat_id && $r[0]['show'] == '1'){ //Если переместили в другой раздел
@@ -240,7 +241,7 @@ function AdminGallerySaveImage()
 
 function AdminGalleryDeleteImage()
 {
-	global $config, $db, $tree, $user, $editimages, $GalleryDir, $ThumbsDir;
+	global $config, $db, $tree, $editimages, $GalleryDir, $ThumbsDir;
 	if(!$editimages){
 		AddTextBox('Ошибка', $config['general']['admin_accd']);
 		return;
@@ -279,7 +280,7 @@ function AdminGalleryDeleteImage()
 
 function AdminGalleryChangeStatus()
 {
-	global $config, $db, $tree, $user, $editimages;
+	global $config, $db, $tree, $editimages;
 	if(!$editimages){
 		AddTextBox('Ошибка', $config['general']['admin_accd']);
 		return;
@@ -304,7 +305,7 @@ function AdminGalleryChangeStatus()
 
 function AdminGalleryResetHits()
 {
-	global $config, $db, $user, $editimages;
+	global $config, $db, $editimages;
 	if(!$editimages){
 		AddTextBox('Ошибка', $config['general']['admin_accd']);
 		return;
