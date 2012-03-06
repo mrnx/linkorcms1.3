@@ -353,5 +353,3 @@ function AdminBlocksMove()
 	}
 	GO($config['admin_file'].'?exe=blocks');
 }
-
-?>
