@@ -1,5 +1,9 @@
 <?php
 
+/*
+ * Правка файла: Мартин | Дата: 06.03.12 14:52
+ * */
+
 if(!defined('VALID_RUN')){
 	header("HTTP/1.1 404 Not Found");
 	exit;
@@ -9,7 +13,6 @@ $title = 'Конфигурация новостного блока';
 
 $topic_id = 0;
 $count = 10;
-$template = 'standart.html';
 
 if($a == 'edit'){
 	$bconf = unserialize($block_config);
@@ -26,5 +29,3 @@ while($topic = $db->FetchRow()){
 
 FormRow('Раздел новостей', $site->Select('topic', $topicdata, false, ''));
 FormRow('Количество новостей', $site->Edit('count', $count, false, 'style="width:40px;" maxlength="11"'));
-
-?>
