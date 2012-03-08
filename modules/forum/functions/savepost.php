@@ -23,6 +23,7 @@ function IndexForumSavePost() {
 				if(isset($_POST['title'])) {
 					$object = SafeDB($post['object'], 11, int);
 					$db->Update('forum_topics',"`title`='$text_title'", "`id`='$object'");
+                    ForumSetLastPostInfo($topic['forum_id']);
 				}
 
 				$page = 1 ;
