@@ -237,7 +237,7 @@ class LcDatabaseMySQL
 		if($this->DbAccess){
 			$this->Connected = true;
 			mysql_query("SET NAMES 'cp1251'");
-			mysql_query("SET CHARACTER SET ‘cp1251'");
+			mysql_query("SET CHARACTER SET 'cp1251'");
 			//@mysql_query("set character_set_client='cp1251'");
 			//@mysql_query("set character_set_results='cp1251'");
 			//@mysql_query("set collation_connection='cp1251_general_ci'");

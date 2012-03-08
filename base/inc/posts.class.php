@@ -164,6 +164,7 @@ class Posts{
 		if(count($Posts) == 0){
 			return false;
 		}
+		SortArray($Posts, 'post_date', ($Level == 0 ? !$this->DecreaseSort : false));
 		foreach($Posts as $post){
 			$post_id = SafeDB($post['id'],11,int);
 			$user_id = SafeDB($post['user_id'],11,int);
@@ -201,7 +202,6 @@ class Posts{
 				$vars['user_avatar_small'] = $userinfo['avatar_file_small'];
 				$vars['user_avatar_smallest'] = $userinfo['avatar_file_smallest'];
 				$vars['user_regdate'] = TimeRender($userinfo['regdate'], false, false);
-				$ruser = true;
 			}else{
 				$vars['user_name'] = SafeDB($post['user_name'],255,str);
 				$vars['post_date'] = SafeDB($post['post_date'],11,int);
@@ -224,7 +224,6 @@ class Posts{
 				$vars['user_avatar_small'] = GetSmallUserAvatar(0, $vars['user_avatar']);
 				$vars['user_avatar_smallest'] = GetSmallestUserAvatar(0, $vars['user_avatar']);
 				$vars['user_regdate'] = '';
-				$ruser = false;
 			}
 			$vars['user_id'] = SafeDB($post['user_id'], 11, int);
 			$vars['post_id'] = $post_id;
@@ -316,7 +315,6 @@ class Posts{
 		$posts = $db->Select($this->PostsTable, $where);
 
 		// Сортировка
-		SortArray($posts, 'post_date', $this->DecreaseSort);
 		$this->PostsTree = array();
 		foreach($posts as $post){
 			$this->PostsTree[$post['post_parent_id']][] = $post;
@@ -360,7 +358,8 @@ class Posts{
 	/**
 	 * Выводит форму добавления или редактирования комментария.
 	 * @param bool $Edit Метод редактирования
-	 * @param str $PostFormBlockName Имя блока для вывода формы
+	 * @param string $PostFormBlockName Имя блока для вывода формы
+	 * @return
 	 */
 	public function RenderForm( $Edit = false, $PostFormBlockName = 'postsform' )
 	{
