@@ -87,8 +87,8 @@ class PageTemplate extends Starkyt
 		@Header('Last-Modified:'.gmdate('D, d M Y H:i:s').' GMT');
 		@Header('Cache-Control: no-store, no-cache, must-revalidate');
 		@Header('Pragma: no-cache');
-		$this->InitStarkyt($config['inc_dir'], 'page.php');
 		$this->AddBlock('head');
+		$this->InitStarkyt($config['inc_dir'], 'page.php');
 		$this->Charset = 'windows-1251';
 		$this->Generator = CMS_NAME.' '.CMS_VERSION.' '.CMS_BUILD;
 		if(isset($config['meta_tags'])){

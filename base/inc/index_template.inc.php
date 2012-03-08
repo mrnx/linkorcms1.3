@@ -22,7 +22,7 @@ class Page extends PageTemplate
 
 		$TemplateDir = $config['tpl_dir'].$config['general']['site_template'].'/';
 		$DefaultTemplateDir = $config['tpl_dir'].$config['general']['default_template'].'/';
-		
+
 		if(defined('MOD_THEME') && MOD_THEME != ''
 			&& (is_file($TemplateDir.'themes/'.MOD_THEME)
 				|| is_file($DefaultTemplateDir.'themes/'.MOD_THEME)))
@@ -38,9 +38,10 @@ class Page extends PageTemplate
 		$this->DefaultRoot = $DefaultTemplateDir;
 
 		$this->SetTableTemplate('table/table_open.html', 'table/table_close.html', 'table/table_cell_open.html', 'table/table_cell_close.html');
-		$this->SetTempVar('head', 'body', $ThemeFile);
 
 		$this->AddBlock('template', true, false, 'page');
+		$this->SetTempVar('head', 'body', $ThemeFile);
+
 		$this->SetVar('template', 'powered', '<a href="http://linkorcms.ru/" target="_blank">Сайт работает на LinkorCMS</a>');
 		$this->SetVar('template', 'dir', $TemplateDir);
 		$this->SetVar('template', 'default_dir', $DefaultTemplateDir);

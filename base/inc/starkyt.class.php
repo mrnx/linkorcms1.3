@@ -104,7 +104,7 @@ class Starkyt extends HTML
 			return $blocks2;
 		}
 
-		global $config, $site, $user, $db;
+		global $config, $site, $user, $db; // для использования в шаблонах
 		ob_start();
 		include($filename);
 		$source = ob_get_clean();
