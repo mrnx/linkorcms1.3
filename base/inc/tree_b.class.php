@@ -67,9 +67,9 @@ class IndexTree extends Tree
 						$child_id = SafeDB($cats[$i][TREE_CHILD_ID][$j]['id'], 11, int);
 						$child_counters = $this->GetCountersRecursive($child_id);
 						$link = Ufu('index.php?name='.$this->moduleName.'&'.$this->id_par_name.'='.$child_id, $this->moduleName.'/{'.$this->id_par_name.'}/');
-						$sub .= '<a href="'.$link.'">'.$cats[$i][TREE_CHILD_ID][$j]['title'].'</a>'.'&nbsp;('.$child_counters['files'].'),&nbsp;';
+						$sub .= '<a href="'.$link.'">'.$cats[$i][TREE_CHILD_ID][$j]['title'].'</a>'.' ('.$child_counters['files'].'), ';
 					}
-					$childs .= substr($sub, 0, strlen($sub) - 7).'.';
+					$childs .= substr($sub, 0, strlen($sub) - 2).'.'; // магическое число - количество удаляемых элементов в конце
 				}
 				$vars['childs_cats'] = $childs;
 
